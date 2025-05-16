@@ -13,4 +13,5 @@
 git clone https://github.com/bhanderihiren/frontend-popular-posts.git
 cd frontend-popular-posts
 npm install
-In frontend-popular-posts-b/src/App.js, replace the following line with your actual WordPress backend URL: const API_URL = 'http://localhost/demo/asst1/wp-json/custom/v1'
+npm run dev
+In frontend-popular-posts/src/App.js, replace the following line with your actual WordPress backend URL: const API_URL = 'http://localhost/projects/headless'

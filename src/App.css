@@ -98,3 +98,24 @@
 .view-post-btn:hover {
   background-color: #1e7e34;
 }
+
+.error {
+  color: red;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin: 40px auto;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
