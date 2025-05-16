@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 const PostCard = ({ post, onUpvote }) => {
   const storageKey = `upvoted_${post.id}`
   const [alreadyUpvoted, setAlreadyUpvoted] = useState(post.already_upvoted)
+  const [upvoteCount, setUpvoteCount] = useState(post.upvotes || 0)
 
   useEffect(() => {
     const hasUpvoted = localStorage.getItem(storageKey) === '1'
@@ -14,6 +15,7 @@ const PostCard = ({ post, onUpvote }) => {
       onUpvote(post.id)
       localStorage.setItem(storageKey, '1')
       setAlreadyUpvoted(true)
+      setUpvoteCount(prev => prev + 1)
     }
   }
 
@@ -31,7 +33,7 @@ const PostCard = ({ post, onUpvote }) => {
           >
             {alreadyUpvoted ? '❤️ Liked' : '🤍 Like'}
           </button>
-          <span className="upvote-count">{post.upvotes || 0}</span>
+          <span className="upvote-count">{upvoteCount}</span>
         </div>
 
         <a
